@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Activate Account</title>
+</head>
+<body>
+    <div>
+        <h1>Account Activation</h1>
+        <p th:text="'Hello ' + ${username}"></p>
+        <p th:text="${activationCode}"></p>
+        <button>
+            <a th:href="${activationUrl}"></a>
+        </button>
+    </div>
+</body>
+</html>

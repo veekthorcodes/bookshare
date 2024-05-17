@@ -1,0 +1,23 @@
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+
+{
+  "firstName": "Victor",
+  "lastName": "Amadi",
+  "email": "amadi490@gmail.com",
+  "password":  "Password123"
+}
+
+###
+GET localhost:8080/api/v1/auth/activate-account?token=747895
+
+###
+###
+## Authenticate User
+POST localhost:8080/api/v1/auth/authenticate
+Content-Type: application/json
+
+{
+  "email": "amadi490@gmail.com",
+  "password": "Password123"
+}

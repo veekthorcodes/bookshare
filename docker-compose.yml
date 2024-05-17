@@ -1,0 +1,30 @@
+services:
+  postgres:
+    image: postgres
+    container_name: bookshare-postgres
+    environment:
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+      PGDATA: /var/lib/postgres/data
+      POSTGRES_DB: bookshare
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - 5432:5432
+    networks:
+      - spring-demo
+    restart: unless-stopped
+  mail-dev:
+    image: maildev/maildev
+    container_name: mail-dev-bookshare
+    ports:
+      - 1080:1080
+      - 1025:1025
+
+
+networks:
+  spring-demo:
+    driver: bridge
+volumes:
+  postgres:
+    driver: local
